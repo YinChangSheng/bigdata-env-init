@@ -3,6 +3,10 @@ workDir=`pwd`
 unpackDir="/usr/local/bigdata"
 downloadDir="${workDir}/download"
 
+Yum() {
+	yum update
+}
+
 FILES=(
 	"https://file.s3.didiyunapi.com/java/jdk-8u212-linux-x64.rpm,jdk8_x64.rpm"
 	"https://file.s3.didiyunapi.com/java/jdk-8u212-linux-x64.tar.gz,jdk8_x64.tar.gz,jdk8_x64:z"
@@ -10,6 +14,8 @@ FILES=(
 	"https://file.s3.didiyunapi.com/hadoop/hadoop-3.2.1.tar.gz,hadoop.tar.gz,hadoop:z"
 	"https://file.s3.didiyunapi.com/hbase/hbase-2.2.1-bin.tar.gz,hbase.tar.gz,hbase:z"
 	"https://file.s3.didiyunapi.com/hive/apache-hive-3.1.2-bin.tar.gz,hive.tar.gz,hive:z"
+	"https://file.s3.didiyunapi.com/hbase/hbase-1.4.10-bin.tar.gz,hbase-1.4.tar.gz,hbase-1.4:z"
+	"https://file.s3.didiyunapi.com/phoenix/apache-phoenix-4.14.3-HBase-1.4-bin.tar.gz,phoenix.tar.gz,phonenix:z"
 )
 
 
@@ -51,11 +57,6 @@ Init() {
 	export JAVA_HOME=$unpackDir/jdk_x64
 	export PATH=$unpackDir/hbase/bin:$JAVA_HOME/bin:$unpackDir/zookeeper/bin:$PATH
 }
-
-Install() {
-
-}
-
 
 Download
 Unpack
